@@ -1,0 +1,84 @@
+@use "../utilities/variables" as *;
+
+.footer {
+  background: $color-surface;
+  padding-top: 60px;
+  border-top: 1px solid $color-border;
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 0 10%;
+  }
+
+  h3, h4 {
+    color: $color-primary;
+    margin-bottom: 15px;
+  }
+
+  p {
+    color: $color-text-secondary;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  a {
+    display: block;
+    color: $color-text-secondary;
+    text-decoration: none;
+    margin-bottom: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+
+    &:hover {
+      color: $color-primary;
+      transform: translateX(5px);
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid $color-border;
+
+    p {
+      font-size: 13px;
+      color: $color-text-secondary;
+    }
+  }
+}
+
+/* =========================
+   💻 TABLET
+========================= */
+@media (max-width: 992px) {
+  .footer {
+
+    .footer-container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+  }
+}
+
+/* =========================
+   📱 MOBILE
+========================= */
+@media (max-width: 768px) {
+  .footer {
+
+    .footer-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+      padding: 0 5%;
+    }
+
+    a {
+      &:hover {
+        transform: none; // evitamos movimiento raro en mobile
+      }
+    }
+  }
+}

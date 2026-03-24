@@ -1,0 +1,105 @@
+@use "../utilities/variables" as *;
+
+.mundo {
+  padding: 100px 10%;
+  background: $color-bg;
+  text-align: center;
+
+  .title {
+    margin-bottom: 40px;
+
+    h2 {
+      font-size: 36px;
+      color: $color-primary;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: $color-text-secondary;
+      font-size: 16px;
+    }
+  }
+
+  .mundo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .mundo-item {
+    text-align: left;
+
+    img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.6),
+        0 0 10px rgba(29, 185, 84, 0.3);
+      transition: 0.3s;
+    }
+
+    p {
+      margin-top: 8px;
+      font-size: 14px;
+      color: $color-text-secondary;
+      transition: 0.3s;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.05);
+        box-shadow: 
+          0 15px 40px rgba(0, 0, 0, 0.8),
+          0 0 20px rgba(29, 185, 84, 0.5);
+      }
+
+      p {
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+
+   // TABLET
+
+@media (max-width: 992px) {
+  .mundo {
+
+    .mundo-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mundo-item img {
+      height: 220px;
+    }
+  }
+}
+
+
+   // MOBILE
+
+@media (max-width: 768px) {
+  .mundo {
+
+    padding: 80px 5%;
+
+    .title h2 {
+      font-size: 28px;
+    }
+
+    .mundo-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .mundo-item {
+      text-align: center;
+
+      img {
+        height: 200px;
+      }
+    }
+  }
+}

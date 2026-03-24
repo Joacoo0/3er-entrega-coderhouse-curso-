@@ -1,0 +1,89 @@
+@use "../utilities/variables" as *;
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+              url("../.././img/fondo.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 200px 20px;
+
+  .hero-content {
+    max-width: 700px;
+    animation: fadeIn 1.2s ease-in-out;
+
+    @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+    h1 {
+      font-size: 64px;
+      color: $color-text;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+
+      span {
+        color: $color-primary;
+      }
+    }
+
+    p {
+      font-size: 18px;
+      color: $color-text-secondary;
+      margin-bottom: 30px;
+    }
+
+    .btn-hero {
+      display: inline-block;
+      padding: 12px 30px;
+      background: $color-primary;
+      color: #000;
+      font-weight: 700;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.3s;
+
+      &:hover {
+        background: $color-primary-hover;
+        transform: scale(1.08);
+        box-shadow: 0 0 15px $color-primary;
+      }
+    }
+  }
+}
+
+//tablet
+
+  @media (max-width: 992px) {
+        .hero{
+            align-items: center;
+            padding: 0px;
+        .hero-content{
+        h1{
+            font-size: 70px;
+            display: inline-block;
+        }
+        p{
+            font-size: 20px;
+        }
+        }
+    }
+  }
+//mobile
+@media (max-width: 768px) {
+    .hero{
+        .hero-content{
+        h1{
+            font-size: 50px;
+            display: inline-block;
+        }
+        }
+    }
+}
